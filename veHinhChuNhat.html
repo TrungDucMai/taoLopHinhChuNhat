@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="400px" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script>
+    function rectangle(chieudai, chieurong) {
+        this.chieudai = chieudai;
+        this.chieurong = chieurong;
+        this.getArea = function () {
+            return this.chieudai * this.chieurong;
+        }
+        this.getperimeter = function () {
+            return (this.chieudai + this.chieurong
+            ) * 2
+        }
+        this.drawrcanvas = function () {
+            let canvas = document.getElementById("myCanvas");
+            let context = canvas.getContext("2d");
+            context.rect(20, 20, this.chieudai, this.chieurong);
+            context.stroke();
+
+        }
+        // Rectangle.prototype.display = function () {
+        // let canvas = document.getElementById("myCanvas");
+        // let context = canvas.getContext("2d");
+        // context.rect(20, 20, this.chieurong, this.chieudai);
+        // context.stroke();
+
+    }
+
+    let hinhchunhat = new rectangle(500, 250);
+    document.write(hinhchunhat.getArea() + '<br>');
+    document.write(hinhchunhat.getperimeter());
+    hinhchunhat.drawrcanvas();
+</script>
+</body>
+</html>
